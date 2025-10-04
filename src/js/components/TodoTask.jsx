@@ -4,12 +4,12 @@ const TodoTasks = ({ todos, setTodos }) => {
   let renderTasks = todos.map((todo, index) => {
     return (
       <div
-        className="list-item border-top border-bottom border-dark"
+        className="list-item border-top border-bottom border-dark d-flex justify-content-between"
         key={index}
       >
-        <label>{todo}</label>
+        <label className="ms-5">{todo} </label>
         <button
-          className="delete-task"
+          className="delete-task me-5"
           onClick={() => {
             deleteTask(todo);
           }}

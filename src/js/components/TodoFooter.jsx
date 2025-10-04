@@ -10,7 +10,7 @@ const TodoFooter = ({todos, setTodos}) => {
                 {/* this will be a ternary to display how many items are left in the
                 todo list in a grammatically correct manner. */}
                 {todos.length !== 1 ? `${todos.length} items left.` : `${todos.length} item left.`}
-                <button onClick={cleartask}>Clear all tasks!</button>
+                {/* <button onClick={cleartask}>Clear all tasks!</button> */}
             </footer>
 
        
