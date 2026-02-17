@@ -1,6 +1,11 @@
 import TodoFooter from "./TodoFooter";
 
 const TodoTasks = ({ todos, setTodos, getData }) => {
+  // Guard against undefined todos
+  if (!todos || !Array.isArray(todos)) {
+    return null;
+  }
+
   let renderTasks = todos.map((todo, index) => {
     return (
       <div
@@ -19,18 +24,18 @@ const TodoTasks = ({ todos, setTodos, getData }) => {
       </div>
     );
   });
-  const deleteTask = async(id) => {
-   const response = await fetch("https://playground.4geeks.com/todo/todos/" + id, {
+  const deleteTask = async (id) => {
+    const response = await fetch("https://playground.4geeks.com/todo/todos/" + id, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
-   });
+    });
     const data = await response.json();
     console.log(data);
     getData();
   };
-  
+
   return (
     <>
       <div className="main">
